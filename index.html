@@ -1,109 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leafline - Nature Tracker</title>
-  <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafline - Earth's Pulse in Real Time</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <i class="ri-leaf-line"></i>
+                </div>
+                <span class="logo">Leafline</span>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#action" class="btn nav-btn">Take Action</a>
+        </div>
+    </nav>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">🌿 Leafline</div>
-    <a href="#stats" class="btn">Live Stats</a>
-  </nav>
+    
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text-container">
+                <h1 class="hero-title">
+                    <span class="title-line">Earth's</span>
+                    <span class="title-line highlight">Pulse</span>
+                    <span class="title-line">in Real Time</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Witnessing our planet's heartbeat through live environmental data
+                </p>
+                <div class="hero-stats-preview">
+                    <div class="preview-stat">
+                        <span class="preview-number" id="hero-trees">125,847</span>
+                        <span class="preview-label">Trees Planted Today</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="dashboard-container">
+                <div class="dashboard-card">
+                    <div class="dashboard-header">
+                        <i class="ri-global-line dashboard-icon"></i>
+                        <h3>Environmental Monitor</h3>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="monitor-item">
+                            <i class="ri-temp-hot-line"></i>
+                            <span>Climate Status</span>
+                            <div class="status-indicator active"></div>
+                        </div>
+                        <div class="monitor-item">
+                            <i class="ri-plant-line"></i>
+                            <span>Biodiversity</span>
+                            <div class="status-indicator active"></div>
+                        </div>
+                        <div class="monitor-item">
+                            <i class="ri-water-percent-line"></i>
+                            <span>Air Quality</span>
+                            <div class="status-indicator warning"></div>
+                        </div>
+                        <div class="monitor-item">
+                            <i class="ri-tree-line"></i>
+                            <span>Forest Coverage</span>
+                            <div class="status-indicator danger"></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-chart">
+                        <div class="chart-line"></div>
+                        <div class="chart-line"></div>
+                        <div class="chart-line"></div>
+                        <div class="chart-line"></div>
+                        <div class="chart-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-<header class="hero">
-  <div class="hero-content">
-    <h1>Let’s Heal the Planet Together</h1>
-    <p>Real-time nature tracking — forests, air, species & more</p>
-    <a href="#stats" class="btn">Start Exploring ↓</a>
-  </div>
-</header>
+    
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="section-header">
+                <h2 class="section-title">Live Environmental Pulse</h2>
+                <p class="section-subtitle">Real-time data updating every moment</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card trees-card">
+                    <div class="card-header">
+                        <i class="ri-seedling-line card-icon"></i>
+                        <div class="progress-ring">
+                            <svg class="progress-svg">
+                                <circle class="progress-circle-bg" cx="50%" cy="50%" r="45%"/>
+                                <circle class="progress-circle" cx="50%" cy="50%" r="45%"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="trees">125,847</div>
+                        <div class="stat-label">Trees Planted</div>
+                        <div class="stat-change">
+                            <i class="ri-arrow-up-line"></i>
+                            150/sec
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card species-card">
+                    <div class="card-header">
+                        <i class="ri-bug-line card-icon"></i>
+                        <div class="pulse-animation"></div>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="species">8,742</div>
+                        <div class="stat-label">Species Protected</div>
+                        <div class="stat-change">
+                            <i class="ri-arrow-up-line"></i>
+                            0.001/sec
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card aqi-card">
+                    <div class="card-header">
+                        <i class="ri-windy-line card-icon"></i>
+                        <div class="aqi-indicator"></div>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="aqi">73</div>
+                        <div class="stat-label">Global AQI</div>
+                        <div class="wave-animation">
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card loss-card">
+                    <div class="card-header">
+                        <i class="ri-earth-line card-icon"></i>
+                        <div class="loss-visualization"></div>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-number" id="forest-loss">3,247</div>
+                        <div class="stat-label">Hectares Lost</div>
+                        <div class="stat-change">
+                            <i class="ri-arrow-down-line"></i>
+                            0.25/sec
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    
+    <section class="impact-section">
+        <div class="impact-container">
+            <div class="impact-content">
+                <h2 class="impact-title">Every Second Counts</h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-visual">
+                            <div class="impact-illustration trees-illustration">
+                                <i class="ri-tree-fill illustration-icon"></i>
+                                <div class="illustration-bg"></div>
+                            </div>
+                        </div>
+                        <div class="impact-text">
+                            <div class="impact-icon">
+                                <i class="ri-seedling-line"></i>
+                            </div>
+                            <h3>Reforestation Revolution</h3>
+                            <p>Global tree-planting initiatives are accelerating, with innovative drone technology and community programs leading the charge in environmental restoration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-item reverse">
+                        <div class="impact-text">
+                            <div class="impact-icon">
+                                <i class="ri-butterfly-line"></i>
+                            </div>
+                            <h3>Species Conservation</h3>
+                            <p>Advanced monitoring systems and AI-powered tracking help protect endangered species while supporting biodiversity preservation efforts worldwide.</p>
+                        </div>
+                        <div class="impact-visual">
+                            <div class="impact-illustration species-illustration">
+                                <i class="ri-butterfly-fill illustration-icon"></i>
+                                <div class="illustration-bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Live Stats -->
-<section id="stats" class="stats-section">
-  <h2 class="section-heading">🌿 Live Earth Stats</h2>
-  <p class="section-sub">Updated every second since Jan 2025</p>
+    
+    <section class="action-section" id="action">
+        <div class="action-container">
+            <div class="action-content">
+                <h2 class="action-title">Small Actions, Global Impact</h2>
+                <p class="action-subtitle">Join millions making a difference every day</p>
+                
+                <div class="action-grid">
+                    <div class="action-card">
+                        <i class="ri-plant-line action-icon"></i>
+                        <h3>Plant Trees</h3>
+                        <p>Support reforestation projects in your area</p>
+                    </div>
+                    
+                    <div class="action-card">
+                        <i class="ri-recycle-line action-icon"></i>
+                        <h3>Reduce Waste</h3>
+                        <p>Minimize plastic and embrace circular economy</p>
+                    </div>
+                    
+                    <div class="action-card">
+                        <i class="ri-flashlight-line action-icon"></i>
+                        <h3>Save Energy</h3>
+                        <p>Switch to renewable sources and efficient appliances</p>
+                    </div>
+                    
+                    <div class="action-card">
+                        <i class="ri-bike-line action-icon"></i>
+                        <h3>Green Transport</h3>
+                        <p>Choose sustainable mobility options</p>
+                    </div>
+                </div>
+                
+                <button class="cta-button">
+                    <span>Start Your Impact</span>
+                    <i class="ri-arrow-right-line"></i>
+                    <div class="button-ripple"></div>
+                </button>
+            </div>
+        </div>
+    </section>
 
-  <div class="stats-grid">
-    <div class="stat-card">
-      <h2 id="trees">0</h2>
-      <p>Trees Planted</p>
-    </div>
-    <div class="stat-card">
-      <h2 id="species">0</h2>
-      <p>Endangered Species</p>
-    </div>
-    <div class="stat-card">
-      <h2 id="aqi">0</h2>
-      <p>Global AQI</p>
-    </div>
-    <div class="stat-card">
-      <h2 id="forest-loss">0</h2>
-      <p>Hectares Lost</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="images">
-    <img src="./img/1.jpg">
-    <img src="./img/2.jpg">
-
-  </div>
-</section>
-
-  <!-- Section: Why Track -->
-  <section class="info-section green">
-    <div class="content-wrapper">
-      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80" alt="Nature" />
-      <div>
-        <h2>Why Track Nature?</h2>
-        <p>We’re losing forests, species and clean air at an alarming rate. Knowing the numbers helps raise awareness and action.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: How It Works -->
-  <section class="info-section light">
-    <div class="content-wrapper reverse">
-      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="Analytics" />
-      <div>
-        <h2>How It Works</h2>
-        <p>Using environmental data APIs and scientific estimates, Leafline shows live tracking of nature-related metrics worldwide.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: What You Can Do -->
-  <section class="info-section white">
-    <div class="content-wrapper">
-      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80" alt="Planting" />
-      <div>
-        <h2>What You Can Do</h2>
-        <p>Plant trees, reduce plastic, save energy, ride a bicycle — small actions create ripple effects for generations.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Leafline. Built with 🌱 by Aman.</p>
-  </footer>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-
-  <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> <!-- Recommended -->
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
